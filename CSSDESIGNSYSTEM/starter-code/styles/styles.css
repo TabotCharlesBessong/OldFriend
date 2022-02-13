@@ -1,5 +1,15 @@
 
 /*************  ***************/
+/* Custom Property */
+/************  ***************/
+
+:root{
+  --clr-dark:hsl(230,35%,7%);
+  --clr-light:hsl(230,77%,90%);
+  --clr-white:hsl( 0, 0% , 101%);
+}
+
+/*************  ***************/
 /* reset */
 /************  ***************/
 
@@ -86,3 +96,42 @@ input,button,textarea,select{
   /* height: 3.5rem; */
   margin-top: 4rem;
 }
+
+/* colors */
+.bg-dark{
+  background: hsl(var(--clr-dark));
+}
+.bg-light{
+  background: hsl(var(--clr-light));
+}
+.bg-white{
+  background: hsl(var(--clr-white));
+}
+
+.text-dark{
+  color: hsl(var(--clr-dark));
+}
+.text-light{
+  color: hsl(var(--clr-light));
+}
+.text-white{
+  color: hsl(var(--clr-white));
+}
+
+/* .flow > *:not(:last-child){ */
+  /* margin-top: 1rem; */
+  /* outline: 1px solid red; */
+/* } */
+
+/* or  */
+.flow > * + *{
+  margin-top: 1rem;
+  outline: 1px solid red;
+  color: var(--clr-dark,blue);
+}
+
+/* for nesting */
+.card :where(h1,h2,h3){
+  text-align: center;
+}
+/* is : is as more specifity compared to where */
